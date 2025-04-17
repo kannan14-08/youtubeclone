@@ -1,0 +1,284 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: "Roboto", sans-serif;
+}
+
+/* Header */
+
+.material_icons{
+  color: rgb(96, 96, 96);
+}
+
+.header{
+  position: fixed;  /* Fix header to the top */
+  top: 0;
+  left: 0;
+  width: 100%;  /* Full width */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  padding: 15px;
+  background-color: white;  /* Ensure it doesn't blend with the content */
+   
+}
+
+.header img{
+  height: 100px;
+}
+
+.header_left{
+  display: flex;
+  align-items: center;
+}
+
+.header i{
+  padding: 0px 7px;
+  cursor: pointer;
+}
+
+/* Header Search */
+
+.header_search form{
+  border: 1px solid #ddd;
+  height: 35px;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.header_search input{
+  width: 500px;
+  padding: 10px;
+  margin: 0;
+  border-radius: 0;
+  border: none;
+}
+
+.header_search button{
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  border: none;
+  border-radius: 0;
+}
+
+/* main body */
+
+.mainbody{
+ height: 100%;
+  display: flex;
+  overflow: hidden;
+}
+
+/* Sidebar - Fix it on the left */
+.sidebar{
+  position: fixed;  /* Fixed position */
+  top: 70px;  /* Align with the header */
+  left: 0;
+  height: calc(100vh - 70px);  /* Full height minus header height */
+  width: 230px;
+  background-color: rgb(255, 255, 255);
+  overflow-y: auto;
+  z-index: 999;  /* Ensure it's below the header */
+}
+
+.sidebar_categories{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.sidebar_category{
+  display: flex;
+  align-items: center;
+  padding: 12px 25px;
+}
+
+.sidebar_category span{
+  margin-left: 15px;
+}
+
+.sidebar_category:hover{
+  background: rgb(231, 228, 228);
+  cursor: pointer;
+}
+
+.sidebar::-webkit-scrollbar{
+  display: none;
+}
+
+hr{
+  height: 1px;
+  background-color: gainsboro;
+  border: none;
+}
+
+/* videos */
+
+.videos{
+  margin-left: 230px;  /* Add space for the fixed sidebar */
+  background-color: rgb(240, 240, 240);
+  height: 100%;
+  padding: 15px 25px;
+  border-top: 1px solid #ddd;
+  overflow-y: auto;
+  margin-top: 70px;
+}
+
+.videos_container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.video{
+  width: 337px;
+  margin-left: 5px;
+  margin-right: 5pxpx;
+  margin-bottom: 26px;
+}
+
+.video_thumbnail{
+  width: 100%;
+  height: 170px;
+}
+
+.video_thumbnail img{
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.author{
+  object-fit: cover;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  margin-right: 10px;
+}
+
+.author img{
+  border-radius: 100px;
+  width: 40px;
+}
+
+.video_details{
+  display: flex;
+  margin-top: 10px;
+}
+
+.title{
+  display: flex;
+  flex-direction: column;
+}
+
+.title h3{
+  color: rgb(3,3,3);
+  line-height: 18px;
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.title a, span{
+  text-decoration: none;
+  color: rgb(96,96,96);
+  font-size: 14px;
+}
+
+h1{
+  font-size: 20px;
+  margin-bottom: 10px;
+  margin-left: 50px;
+}
+
+@media (max-width: 768px) {
+  /* Header */
+  .header {
+    height: 56px;
+    padding: 0 12px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    background-color: #fff;
+  }
+
+  .header_left {
+    display: flex;
+    align-items: center;
+  }
+
+  .header_left i {
+    font-size: 24px;
+    margin-right: 8px;
+  }
+
+  .header img {
+    height: 60px;
+    margin-left: 0;
+  }
+
+  .header_right {
+    display: flex;
+    align-items: center;
+  }
+
+  .header_right i {
+    font-size: 24px;
+    padding: 0 6px;
+    color: rgb(96, 96, 96);
+  }
+
+  /* Hide desktop search bar */
+  .header_search {
+    display: none;
+  }
+
+  /* Sidebar hidden on mobile */
+  .sidebar {
+    display: none;
+  }
+
+  /* Videos take full width */
+  .videos {
+    margin: 0;
+    width: 100%;
+    padding: 10px;
+    margin-top: 56px; /* to match mobile header */
+  }
+
+  .videos_container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .video {
+    width: 100%;
+    max-width: 100%;
+    margin: 10px 0;
+  }
+
+  .video_thumbnail {
+    height: auto;
+  }
+
+  .title h3, .title a, .title span {
+    font-size: 16px;
+  }
+
+  .video_details {
+    flex-direction: row;
+    align-items: center;
+  }
+}
